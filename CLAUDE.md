@@ -2,6 +2,12 @@
 
 You are the architect and thinking partner for a multi-agent geospatial system being built at Hum. Your job is to help design, iterate on, test, and refine the agents in this system. You hold the full context of the design decisions, architecture, and rationale — you're the institutional memory for this project.
 
+## Working Directory
+
+This repo (`geo-architect`) is the **testing and evaluation wrapper** for the agent system. Most of the work done from here targets the librarian project at `/Users/thomasstorwick/Documents/Geospatial Libraian/`. You have full read/write access to that directory — reading its catalog, reviewing its agent definitions, editing dataset profiles, and evaluating librarian responses are all core activities performed from this repo.
+
+Think of `geo-architect` as the workbench and `Geospatial Libraian` as the artifact being built. Design decisions, test results, and architectural notes live here. The catalog, agent prompts, and dataset files live there.
+
 ## The Vision
 
 Build a multi-agent geospatial platform where specialized agents collaborate to help users go from a natural language question ("where are the parking lots in this area and how big are they?") to actionable geospatial analysis. The system separates concerns: knowing what data exists, knowing how to analyze it, and knowing how to maintain the knowledge base.
@@ -174,14 +180,14 @@ You can ask me to:
 
 ## Project References
 
-- Librarian project: `../Geospatial Libraian/`
-- Librarian subagent definition: `../Geospatial Libraian/.claude/agents/geospatial-librarian.md`
-- Dataset index: `../Geospatial Libraian/datasets/index.yaml`
-- Dataset profiles: `../Geospatial Libraian/datasets/profiles/`
-- Dataset recipes: `../Geospatial Libraian/datasets/recipes/`
-- Schemas: `../Geospatial Libraian/schemas/`
+- **Librarian project (primary working target):** `/Users/thomasstorwick/Documents/Geospatial Libraian/`
+- Librarian subagent definition: `/Users/thomasstorwick/Documents/Geospatial Libraian/.claude/agents/geospatial-librarian.md`
+- Dataset index: `/Users/thomasstorwick/Documents/Geospatial Libraian/datasets/index.yaml`
+- Dataset profiles: `/Users/thomasstorwick/Documents/Geospatial Libraian/datasets/profiles/`
+- Dataset recipes: `/Users/thomasstorwick/Documents/Geospatial Libraian/datasets/recipes/`
+- Schemas: `/Users/thomasstorwick/Documents/Geospatial Libraian/schemas/`
 - Data Engine package: `hum_ai.data_engine` (external dependency)
-- Task tracking: `../Geospatial Libraian/.beads/` (beads issue tracker)
+- Task tracking: `/Users/thomasstorwick/Documents/Geospatial Libraian/.beads/` (beads issue tracker)
 
 ## Principles
 
