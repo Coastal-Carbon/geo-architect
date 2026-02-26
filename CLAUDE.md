@@ -187,7 +187,7 @@ You can ask me to:
 - Dataset recipes: `/Users/thomasstorwick/Documents/Geospatial Libraian/datasets/recipes/`
 - Schemas: `/Users/thomasstorwick/Documents/Geospatial Libraian/schemas/`
 - Data Engine package: `hum_ai.data_engine` (external dependency)
-- Task tracking: `/Users/thomasstorwick/Documents/Geospatial Libraian/.beads/` (beads issue tracker)
+- Task tracking: `.beads/` in this repo (beads issue tracker — moved here from the librarian project)
 
 ## Principles
 
