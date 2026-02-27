@@ -1,0 +1,215 @@
+# Librarian end-to-end test scenarios
+#
+# Each scenario asks the librarian directly how to download and use a specific
+# dataset, then attempts to download one sample using only the information the
+# librarian provides plus the recipe files in the catalog.
+#
+# Fields:
+#   id              — dataset ID (matches datasets/profiles/{id}.yaml)
+#   name            — human-readable dataset name
+#   question        — direct question sent to the querying agent
+#   access_pattern  — how this dataset is fetched (CollectionInput, Ancillary, DirectSTAC, OverpassAPI)
+#   expected_outcome — SUCCESS or expected_failure
+#   timeout_seconds — max runtime for the test session
+
+scenarios:
+
+  # --- Free satellite imagery (CollectionInput pattern) ---
+
+  - id: sentinel-2-l2a
+    name: Sentinel-2 L2A Surface Reflectance
+    question: >
+      How do I download and use Sentinel-2 L2A data using the Hum Data Engine?
+      I need to get a single sample tile for San Francisco.
+    access_pattern: CollectionInput
+    expected_outcome: success
+    timeout_seconds: 300
+
+  - id: naip
+    name: NAIP Aerial Imagery
+    question: >
+      How do I download and use NAIP aerial imagery using the Hum Data Engine?
+      I need to get a single sample tile for San Francisco.
+    access_pattern: CollectionInput
+    expected_outcome: success
+    timeout_seconds: 300
+
+  - id: landsat-8-9
+    name: Landsat 8 & 9 Collection 2
+    question: >
+      How do I download and use Landsat 8/9 data using the Hum Data Engine?
+      I need to get a single sample tile for San Francisco.
+    access_pattern: CollectionInput
+    expected_outcome: success
+    timeout_seconds: 300
+
+  - id: sentinel-1-rtc
+    name: Sentinel-1 RTC SAR
+    question: >
+      How do I download and use Sentinel-1 RTC SAR data using the Hum Data Engine?
+      I need to get a single sample tile for San Francisco.
+    access_pattern: CollectionInput
+    expected_outcome: success
+    timeout_seconds: 300
+
+  - id: esa-worldcover
+    name: ESA WorldCover
+    question: >
+      How do I download and use ESA WorldCover land cover data using the Hum Data Engine?
+      I need to get a single sample tile for San Francisco.
+    access_pattern: CollectionInput
+    expected_outcome: success
+    timeout_seconds: 300
+
+  - id: io-lulc-annual
+    name: Impact Observatory LULC Annual
+    question: >
+      How do I download and use Impact Observatory LULC Annual data using the Hum Data Engine?
+      I need to get a single sample tile for San Francisco.
+    access_pattern: CollectionInput
+    expected_outcome: success
+    timeout_seconds: 300
+
+  - id: modis-nbar-vegetation
+    name: MODIS NBAR Vegetation Indices
+    question: >
+      How do I download and use MODIS NBAR vegetation data (MCD43A4) using the Hum Data Engine?
+      I need to get a single sample tile for San Francisco.
+    access_pattern: CollectionInput
+    expected_outcome: success
+    timeout_seconds: 300
+
+  # --- Commercial satellites (expected failures — no holdings / private access) ---
+
+  - id: capella
+    name: Capella X-band SAR
+    question: >
+      How do I download and use Capella SAR data using the Hum Data Engine?
+      I need to get a single sample tile for San Francisco.
+    access_pattern: CollectionInput
+    expected_outcome: expected_failure
+    timeout_seconds: 180
+
+  - id: umbra
+    name: Umbra X-band SAR
+    question: >
+      How do I download and use Umbra SAR data using the Hum Data Engine?
+      I need to get a single sample tile for San Francisco.
+    access_pattern: CollectionInput
+    expected_outcome: expected_failure
+    timeout_seconds: 180
+
+  - id: pleiades
+    name: Pleiades Neo Multispectral
+    question: >
+      How do I download and use Pleiades imagery using the Hum Data Engine?
+      I need to get a single sample tile for San Francisco.
+    access_pattern: CollectionInput
+    expected_outcome: expected_failure
+    timeout_seconds: 180
+
+  - id: skysat
+    name: Planet SkySat
+    question: >
+      How do I download and use SkySat imagery using the Hum Data Engine?
+      I need to get a single sample tile for San Francisco.
+    access_pattern: CollectionInput
+    expected_outcome: expected_failure
+    timeout_seconds: 180
+
+  - id: superdove
+    name: Planet SuperDove
+    question: >
+      How do I download and use Planet SuperDove (PlanetScope) data using the Hum Data Engine?
+      I need to get a single sample tile for San Francisco.
+    access_pattern: CollectionInput
+    expected_outcome: expected_failure
+    timeout_seconds: 180
+
+  - id: spot-ms
+    name: SPOT Multispectral
+    question: >
+      How do I download and use SPOT multispectral imagery using the Hum Data Engine?
+      I need to get a single sample tile for San Francisco.
+    access_pattern: CollectionInput
+    expected_outcome: expected_failure
+    timeout_seconds: 180
+
+  - id: worldview
+    name: Maxar WorldView
+    question: >
+      How do I download and use WorldView imagery using the Hum Data Engine?
+      I need to get a single sample tile for San Francisco.
+    access_pattern: CollectionInput
+    expected_outcome: expected_failure
+    timeout_seconds: 180
+
+  - id: wyvern
+    name: Wyvern Hyperspectral
+    question: >
+      How do I download and use Wyvern hyperspectral imagery using the Hum Data Engine?
+      I need to get a single sample tile for San Francisco.
+    access_pattern: CollectionInput
+    expected_outcome: expected_failure
+    timeout_seconds: 180
+
+  # --- Ancillary data (class-based access) ---
+
+  - id: nasadem
+    name: NASADEM Elevation
+    question: >
+      How do I download and use NASADEM elevation data?
+      I need to get a single sample for a small area around San Francisco.
+    access_pattern: Ancillary
+    expected_outcome: success
+    timeout_seconds: 300
+
+  - id: hwsd2-soils
+    name: HWSD2 Soil Properties
+    question: >
+      How do I download and use HWSD2 soil data?
+      I need to get a single sample for a small area around San Francisco.
+    access_pattern: Ancillary
+    expected_outcome: success
+    timeout_seconds: 300
+
+  - id: gpw-population
+    name: Gridded Population of the World
+    question: >
+      How do I download and use GPW population density data?
+      I need to get a single sample for a small area around San Francisco.
+    access_pattern: Ancillary
+    expected_outcome: success
+    timeout_seconds: 300
+
+  - id: udel-weather-normals
+    name: U.Delaware Climate Normals
+    question: >
+      How do I download and use University of Delaware weather normals data?
+      I need to get a single sample for a small area around San Francisco.
+    access_pattern: Ancillary
+    expected_outcome: success
+    timeout_seconds: 300
+
+  # --- Direct STAC (no Data Engine integration) ---
+
+  - id: cop-dem
+    name: Copernicus DEM
+    question: >
+      How do I download and use Copernicus DEM elevation data?
+      I need to get a single sample for a small area around San Francisco.
+      Note: This dataset is NOT in the Hum Data Engine — I need direct STAC access.
+    access_pattern: DirectSTAC
+    expected_outcome: success
+    timeout_seconds: 300
+
+  # --- Overpass API (vector features) ---
+
+  - id: osm-features
+    name: OpenStreetMap Vector Features
+    question: >
+      How do I download and use OpenStreetMap features data?
+      I need to get a single sample of building footprints for a small area in San Francisco.
+    access_pattern: OverpassAPI
+    expected_outcome: success
+    timeout_seconds: 300

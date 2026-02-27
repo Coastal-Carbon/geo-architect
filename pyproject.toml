@@ -1,0 +1,11 @@
+[project]
+name = "geo-architect"
+version = "0.1.0"
+description = "Meta-agent for the Hum multi-agent geospatial system"
+requires-python = ">=3.13"
+dependencies = []
+
+[[tool.uv.index]]
+name = "hum-code-artifact"
+url = "https://hum-984625687489.d.codeartifact.us-east-1.amazonaws.com/pypi/hum-python/simple"
+default = true
